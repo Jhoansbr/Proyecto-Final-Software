@@ -1,0 +1,95 @@
+/* Reinicio básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Estilo general del cuerpo */
+body {
+    background-color: #E8F8F5;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Sección principal de recuperación */
+.recover-section {
+    background: #FCF3CF;
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Título */
+.recover-section h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Estilo del formulario */
+#recover-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Etiquetas */
+#recover-form label {
+    font-size: 14px;
+    color: #555;
+    text-align: left;
+}
+
+/* Campo de entrada */
+#recover-form input {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #E8F8F5;
+    border-radius: 5px;
+    width: 100%;
+    outline: none;
+    transition: border 0.3s;
+}
+
+#recover-form input:focus {
+    border: 1px solid #74c69d;
+}
+
+/* Botón de recuperación */
+#recover-form button {
+    background: #74c69d;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#recover-form button:hover {
+    background: #52b788;
+}
+
+/* Enlace de regreso */
+.back-to-login {
+    margin-top: 15px;
+}
+
+.back-to-login a {
+    text-decoration: none;
+    color: #555;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.back-to-login a:hover {
+    color: #333;
+}

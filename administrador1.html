@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de Administrador</title>
+  <link rel="stylesheet" href="css/administrador.css">
+  <style>
+    .table-container {
+      display: none; /* Ocultar por defecto */
+    }
+    .welcome {
+      text-align: center;
+      padding: 20px;
+    }
+    .actions button {
+      margin-left: 5px;
+    }
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: none;
+    }
+    .modal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      display: none;
+      width: 400px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Perfil del administrador -->
+    <div class="admin-profile">
+      <img src="images/Acceder.png" alt="Foto de perfil" class="avatar">
+      <h2>Administrador</h2>
+      <div class="buttons">
+        <button class="btn green" onclick="showTable('menuTable')">Gestionar Menú</button>
+        <button class="btn green" onclick="showTable('pedidosTable')">Gestionar Pedidos</button>
+        <button class="btn green" onclick="showTable('inventarioTable')">Gestionar Inventario</button>
+        <button class="btn green" onclick="showTable('ventasTable')">Reporte de Ventas</button>
+        <button class="btn green" onclick="cerrarSesion()">Cerrar Sesión</button>
+      </div>
+    </div>
+
+    <!-- Contenedor de la tabla de menú -->
+    <div class="table-container" id="menuTable">
+      <table>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="menuTableBody">
+          <!-- Aquí se agregarán los nuevos platillos -->
+        </tbody>
+      </table>
+      <button class="btn green" onclick="showModal()">Agregar</button>
+    </div>
+
+    <div class="table-container" id="pedidosTable">
+  <table>
+    <thead>
+      <tr>
+        <th>Cliente</th>
+        <th>Dirección</th>
+        <th>Plato(s)</th>
+        <th>Fecha</th>
+        <th>Estado</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody id="pedidosTableBody">
+      <!-- Aquí se agregarán los pedidos confirmados -->
+    </tbody>
+  </table>
+</div>
+
+    <!-- Formulario de agregar plato -->
+    <div class="modal-overlay" id="modalOverlay" onclick="closeModal()"></div>
+    <div class="modal" id="addDishModal">
+      <h2>Agregar Nuevo Platillo</h2>
+      <form id="addDishForm">
+        <div class="form-group">
+          <label for="dishName">Nombre</label>
+          <input type="text" id="dishName" placeholder="Ingrese el nombre del platillo" required>
+        </div>
+        <div class="form-group">
+          <label for="dishPrice">Precio</label>
+          <input type="number" id="dishPrice" placeholder="Ingrese el precio" required>
+        </div>
+        <div class="form-group">
+          <label for="dishDescription">Descripción</label>
+          <textarea id="dishDescription" rows="3" placeholder="Ingrese la descripción" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="dishIngredients">Ingredientes</label>
+          <textarea id="dishIngredients" rows="2" placeholder="Ingrese los ingredientes" required></textarea>
+        </div>
+        <div class="modal-buttons">
+          <button type="button" class="btn red" onclick="closeModal()">Cancelar</button>
+          <button type="submit" class="btn green">Agregar</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Otros contenedores de tabla, como pedidos, inventario y ventas, se agregarían de manera similar -->
+
+    <!-- Mensaje de bienvenida -->
+    <div class="welcome" id="welcomeMessage">
+      <h1>Bienvenido</h1>
+      <p>¡Gracias por gestionar nuestro sistema! Selecciona una de las opciones para continuar.</p>
+    </div>
+  </div>
+
+<script src="js/administrador.js"></script>
+</body>
+</html>

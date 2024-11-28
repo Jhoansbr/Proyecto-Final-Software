@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Visualizacion  de las entradas del menu.">
+    <title>Entradas</title>
+    <link rel="stylesheet" href="css/entradas.css">
+
+</head>
+<body>
+    <header>
+        <img src="images/logo.png" class="imagen-logo" alt="Logo del Restaurante">
+        <ul class="menu-horizontal">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="menú.html">Menú</a></li>
+            <li><a href="reservas.html">Reservas</a></li>
+            <li><a href="pedidos.html">Pedidos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+  
+        <div class="content-wrapper" id="reservas">
+            <div class="imagen-contenedor">
+                <!-- Imagen de perfil del usuario o predeterminada -->
+                <img id="foto-perfil" src="images/Acceder.png" class="Acceder"> <!-- Imagen predeterminada -->
+                <a id="acceder-enlace" href="login.html" class="texto-abajo">Acceder</a> <!-- Enlace de acceso -->
+                <!-- Opciones de Cerrar sesión (ocultas inicialmente) -->
+                <div id="cerrar-sesion" style="display:none; ">
+                    <a href="#" id="cerrar-enlace">Cerrar sesión</a>
+                </div>
+            </div>
+    
+    <!-- Sección de comida -->
+   <main>
+    <h2>POSTRES</h2>
+    <a  href="menú.html"><button id="btnRegresar">Regresar</button></a>
+    <section class="menu-grid">
+        <div class="menu-item">
+            <img src="images/po1.jpg" alt="Postre 1">
+            <p class="title">Tiramisú</p>
+            <p class="description">Capas de bizcochos empapados en café espresso y licor (amaretto o marsala),queso mascarpone
+                y cacao en polvo.</p>
+            <p class="price">Precio por persona: 20.000 $</p>
+        </div>
+
+        <div class="menu-item">
+            <img src="images/po2.jpg" alt="Postre 2">
+            <p class="title">Macarons</p>
+            <p class="description">Merengue de almendra, rellenan con ganache, mermelada o crema.</p>
+            <p class="price">Precio por persona: 15.000 $</p>
+        </div>
+
+
+        <div class="menu-item">
+            <img src="images/po3.jpg" alt="Postre 3">
+            <p class="title">Torta de queso</p>
+            <p class="description">Pastel cremoso hecho de queso crema,  sobre una base de galleta triturada y
+                una cobertura (mermelada, chocolate o caramelo).</p>
+            <p class="price">Precio por persona: 22.000 $</p>
+        </div>
+
+        <div class="menu-item">
+            <img src="images/po4.jpg" alt="Postre 4">
+            <p class="title"> Churros con chocolate.</p>
+            <p class="description">Bastones fritos de masa, cubiertos con azúcar acompañado con una taza de chocolate.</p>
+            <p class="price">Precio por persona: 18.000 $</p>
+        </div>
+
+        <div class="menu-item">
+            <img src="images/po5.jpg" alt="Postre 5">
+            <p class="title">Baklava</p>
+            <p class="description">Capas de masa fina rellenas de nueces picadas (pistachos o almendras) 
+                y bañadas en jarabe de miel</p>
+            <p class="price">Precio por persona: 26.000 $</p>
+        </div>
+
+        <div class="menu-item">
+            <img src="images/po6.jpg" alt="Postre 6">
+            <p class="title">Mousse de chocolate</p>
+            <p class="description">chocolate.</p>
+            <p class="price">Precio por persona: 17.000 $</p>
+        </div>
+    </section>
+</main>
+
+
+     <!-- Pie de página -->
+     <footer>
+        <!-- Logotipo en la parte superior -->
+        <div class="footer-logo">
+            <img src="images/logo.png" class="imagen-footer" alt="Logotipo del restaurante" title="Restaurante Miramar">
+        </div>
+
+        <div class="footer-content">
+            <!-- Descripción -->
+            <div class="footer-description">
+                <p>
+                    En un entorno único, Gastrofood ofrece una cocina moderna con raíces tradicionales, utilizando ingredientes de primera calidad y un servicio refinado. 
+                    Disfruta de platos creativos y una experiencia gastronómica excepcional en cada visita.
+                </p>
+            </div>
+
+            <!-- Contacto -->
+            <div class="footer-contact">
+                <h3>Contacto</h3>
+                <p>Email: <a href="mailto:restaurant@GastroFood.com">restaurant@GastroFood.com</a></p>
+                <div class="social-icons">
+                    <a href="#">📷 Instagram</a>
+                    <a href="mailto:restaurant@GastroFood.com">📧 Correo electrónico</a>
+                </div>
+            </div>
+
+            <div class="footer-legal">
+                <p>Aviso legal</p>
+                <p>Política de privacidad</p>
+                <p>Política de cookies</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/funciones.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedidos</title>
+    <link rel="stylesheet" href="css/pedidos.css">
+</head>
+
+<body>
+    <header>
+        <img src="images/logo.png" class="imagen-logo" alt="Logotipo del Restaurante">
+        <ul class="menu-horizontal">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="menú.html">Menú</a></li>
+            <li><a href="reservas.html">Reservas</a></li>
+            <li><a href="pedidos.html">Pedidos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+        <div class="imagen-contenedor">
+            <img id="foto-perfil" src="images/Acceder.png" class="Acceder" alt="Foto de perfil">
+            <a id="acceder-enlace" href="login.html" class="texto-abajo">Acceder</a>
+            <div id="cerrar-sesion" style="display: none;">
+                <a href="#" id="cerrar-enlace">Cerrar sesión</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div id="menu-platos-container">
+            <h1>Menú de Platos</h1>
+        </div>
+        <div id="menu-superior">
+            <button id="boton-regresar" onclick="regresar()">Regresar</button>
+
+        </div>
+        <div class="content-wrapper">
+            <div class="categorias-platos">
+                <h2 class="titulo-categorias">Categorías</h2>
+                <div class="categorias-en-filas">
+                    <ul id="categorias-lista">
+                        <li class="categoria-item" data-categoria="entradas" onclick="cargarPlatos('entradas')">Entradas</li>
+                        <li class="categoria-item" data-categoria="principales" onclick="cargarPlatos('principales')">Platos
+                            Principales</li>
+                        <li class="categoria-item" data-categoria="postres" onclick="cargarPlatos('postres')">Postres</li>
+                    </ul>
+                </div>
+                <div class="platos">
+                    <div id="platos-container" class="menu-grid">
+                        <!-- Los platos se cargarán aquí según la categoría seleccionada -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="carrito">
+                <h2>Carrito</h2>
+                <div id="carrito-container">
+                    <ul id="lista-carrito"></ul>
+                    <p id="total">Total: 0 $</p>
+                    <button id="boton-confirmar" onclick="confirmarPedido()" disabled>Confirmar Pedido</button>
+                    <div id="confirmacion" style="display: none;">
+                        <p>Pedido confirmado. Procede al pago.</p>
+                        <button onclick="simularPago()">Simular Pago</button>
+                    </div>
+                    <div id="mensaje-pago" style="display: none;">
+                        <p>Pago realizado con éxito. ¡Gracias por tu compra!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="overlay" style="display: none;"></div>
+    <div id="modalPago" style="display: none;">
+        <h2>Confirmar Pedido</h2>
+        <button id="cerrarModal" class="close-button" onclick="document.getElementById('modalPago').style.display = 'none'">X</button>
+        <form id="formulario-pago">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" placeholder="Ingresa tu nombre">
+            <label for="direccion">Dirección:</label>
+            <input type="text" id="direccion" placeholder="Ingresa tu dirección">
+            <label for="telefono">Teléfono:</label>
+            <input type="text" id="telefono" placeholder="Ingresa tu teléfono">
+            <button type="button" onclick="enviarPago()">Enviar</button>
+        </form>
+    </div>
+    <div id="modalConfirmacion" style="display: none;">
+        <div class="modal-content">
+            <h2>Pedido Confirmado</h2>
+            <p id="mensajeConfirmacion"></p>
+            <button onclick="cerrarConfirmacion()">Cerrar</button>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-logo">
+            <img src="images/logo.png" class="imagen-footer" alt="Logotipo del restaurante" title="Restaurante Miramar">
+        </div>
+        <div class="footer-content">
+            <div class="footer-description">
+                <p>En un entorno único, Gastrofood ofrece una cocina moderna con raíces tradicionales, utilizando
+                    ingredientes de primera calidad y un servicio refinado. Disfruta de platos creativos y una
+                    experiencia gastronómica excepcional en cada visita.</p>
+            </div>
+            <div class="footer-contact">
+                <h3>Contacto</h3>
+                <p>Correo electrónico: <a href="mailto:restaurant@GastroFood.com">restaurant@GastroFood.com</a></p>
+                <div class="social-icons">
+                    <a href="#">📷 Instagram</a>
+                    <a href="mailto:restaurant@GastroFood.com">📧 Correo electrónico</a>
+                </div>
+            </div>
+            <div class="footer-legal">
+                <p>Aviso legal</p>
+                <p>Política de privacidad</p>
+                <p>Política de cookies</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/pedidos.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Repartidor</title>
+  <link rel="stylesheet" href="css/repartidor.css">
+  <style>
+    .orders-section {
+      display: none; /* Oculta todas las secciones inicialmente */
+    }
+    .orders-section.active {
+      display: block; /* Muestra solo las secciones activas */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="profile">
+        <img src="images/Acceder.png" alt="Avatar">
+        <h2 id="userName">Juan Pablo Perez Jimenez</h2> <!-- Nombre dinámico aquí -->
+      </div>
+      <hr>
+      <div class="links">
+        <button class="link" onclick="showSection('assignedOrders')">Pedidos Asignados</button>
+        <hr>
+        <button class="link" onclick="showSection('deliveredOrders')">Pedidos Entregados</button>
+        <button class="btn green" onclick="cerrarSesion()">Cerrar Sesión</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <!-- Sección de bienvenida -->
+      <div id="welcomeSection" class="orders-section active">
+        <h2>Bienvenido, <span id="welcomeUserName">Juan Pablo Pérez Jiménez</span></h2> <!-- Nombre dinámico en la bienvenida -->
+        <p>¡Gracias por formar parte del equipo! Selecciona una de las opciones para ver tus pedidos.</p>
+      </div>
+    
+      <div class="orders">
+        <div id="assignedOrders" class="orders-section">
+          <div id="assignedMessage"></div> <!-- Mensaje dinámico para pedidos asignados -->
+          <table id="assignedTable" style="display: none;"> <!-- Oculta la tabla inicialmente -->
+            <thead>
+              <tr>
+                <th>Id del Pedido</th>
+                <th>Nombre del Cliente</th>
+                <th>Dirección</th>
+                <th>Teléfono</th>
+                <th>Precio</th>
+                <th>Estado del Pedido</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Aquí irán los pedidos asignados dinámicamente -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Pedidos Entregados (opcional) -->
+        <div id="deliveredOrders" class="orders-section">
+          <div id="deliveredMessage"></div> <!-- Mensaje dinámico para pedidos entregados -->
+          <table id="deliveredTable" style="display: none;"> <!-- Oculta la tabla inicialmente -->
+            <thead>
+              <tr>
+                <th>ID del Pedido</th>
+                <th>Nombre del Cliente</th>
+                <th>Dirección</th>
+                <th>Teléfono</th>
+                <th>Precio</th>
+                <th>Estado del Pedido</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Aquí irán los pedidos entregados dinámicamente -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<script src="js/repartidor.js"></script>
+
+</body>
+</html>

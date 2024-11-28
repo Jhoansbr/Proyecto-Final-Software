@@ -1,0 +1,416 @@
+/* Asegura que el html y body ocupen toda la altura de la ventana */
+html, body {
+    height: 100%; /* La altura total de la ventana */
+    margin: 0; /* Elimina márgenes por defecto */
+}
+
+/* Contenedor principal que ocupa todo el espacio disponible */
+body {
+    display: flex;
+    flex-direction: column; /* Alinea los elementos de manera vertical */
+    justify-content: flex-start; /* Alinea el contenido hacia la parte superior */
+    background-color: #E8F8F5; /* Fondo blanco actualizado */
+}
+
+/* Content-wrapper ocupa todo el espacio disponible entre el contenido y el footer */
+.content-wrapper {
+    flex: 1; /* Esto asegura que el contenido ocupe todo el espacio disponible */
+    padding: 40px; /* Añade algo de espacio alrededor */
+    background-color: #E8F8F5; /* Color base ajustado */
+}
+
+/* Contenedor para el label y select alineados horizontalmente */
+.container {
+    display: flex;
+    gap: 5px;
+    margin: 20px auto;
+    max-width: 500px;
+    justify-content: center;
+    position: absolute;
+    top: 130px; /* Controla la posición desde la parte superior */
+    margin-bottom: 60px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Estilo para el label */
+label {
+    margin: 10px;
+    padding: 5px;
+    color: #000000; /* Color ajustado a tono gris suave */
+    font-weight: bold;
+}
+
+/* Estilo para el select */
+select {
+    padding: 5px;
+    font-size: 16px;
+    height: 30px;
+    margin: 10px;
+    border-radius: 2px;
+    border: 1px solid #BFC9CA; /* Color borde más suave */
+    width: 200px;
+}
+
+/* Estilo general del formulario */
+.form-section {
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #FCF3CF;
+    border-radius: 8px;
+    margin-top: 20px; /* Espacio entre el selector y el formulario */
+    margin-bottom: 20px; /* Espacio inferior */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none; /* El formulario está oculto por defecto */
+}
+
+/* Estilo para los inputs */
+input {
+    width: 90%;
+    padding: 6px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #BFC9CA; /* Color borde más suave */
+    font-size: 12px;
+}
+
+/* Estilo para el botón */
+button {
+    width: 100%;
+    padding: 8px;
+    background-color: #D2691E; /* Color suave y relajante */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: #E65A2D; /* Color más oscuro al pasar el ratón */
+}
+
+/* Formulario y contenido adicional */
+.form-section {
+    margin-bottom: 60px;
+}
+
+
+
+/* Imagen del logo responsiva */
+.imagen-logo {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+}
+
+/* Media Queries para hacerlo responsivo */
+
+/* Pantallas medianas (tabletas y pantallas más grandes) */
+@media (max-width: 768px) {
+    .container {
+        max-width: 90%; /* El contenedor ocupa el 90% del ancho en pantallas medianas */
+        top: 50px; /* Ajusta la posición */
+    }
+
+    /* Ajusta los tamaños de los inputs y botones */
+    input, select, button {
+        font-size: 14px; /* Aumenta el tamaño de la fuente en inputs, select y botones */
+    }
+
+    /* El formulario se ajusta un poco más */
+    .form-section {
+        max-width: 90%;
+        padding: 15px; /* Aumenta el padding para mayor comodidad */
+    }
+}
+
+/* Pantallas pequeñas (móviles) */
+@media (max-width: 480px) {
+    .container {
+        flex-direction: column; /* Cambia la disposición a columna para móviles */
+        gap: 15px; /* Aumenta el espacio entre los elementos */
+        top: 30px; /* Ajusta la posición */
+    }
+
+    /* Ajusta los tamaños de los inputs, select y botón para que sean más grandes en móviles */
+    input, select, button {
+        font-size: 16px;
+        padding: 8px; /* Aumenta el padding para mejor interacción */
+    }
+
+    /* El formulario ocupa todo el ancho en pantallas pequeñas */
+    .form-section {
+        max-width: 100%;
+        padding: 20px;
+    }
+}
+
+/* Estilos generales del pie de página */
+footer {
+    background-color: #f8f8f8;
+    padding: 0px 0px;
+    color: #333;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    
+}
+
+/* Logotipo centrado en la parte superior */
+.footer-logo {
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.footer-logo img {
+    max-width: 450px;
+    height: auto;
+}
+
+/* Contenido del pie de página (debajo del logotipo) */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+    gap: 20px;
+}
+
+/* Descripción */
+.footer-description {
+    font-family: 'Georgia', serif;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #333;
+    margin: 0px 0;
+    text-align: justify;
+    max-width: 340px;
+}
+
+/* Contacto */
+.footer-contact {
+    flex: 1;
+    font-size: 14px;
+    text-align: left;
+    margin-left: 120px;
+    margin-right: 120px;
+    margin-top: 10px;
+}
+
+.footer-contact h3 {
+    font-size: 16px;
+    color: #00579c;
+    margin-bottom: 10px;
+}
+
+.footer-contact a {
+    color: #00579c;
+    text-decoration: none;
+}
+
+.footer-contact a:hover {
+    text-decoration: underline;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+/* Enlaces legales */
+.footer-legal {
+    flex: 1;
+    text-align: left;
+}
+
+.footer-legal h3 {
+    font-size: 16px;
+    color: #00579c;
+    margin-bottom: 10px;
+}
+
+.footer-legal a {
+    color: #00579c;
+    text-decoration: none;
+}
+
+.footer-legal a:hover {
+    text-decoration: underline;
+}
+
+/* Pie de página inferior */
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+    color: #666;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
+
+/* Media Queries para dispositivos móviles */
+@media (max-width: 768px) {
+    .menu-horizontal {
+        flex-direction: column; /* Menú vertical en pantallas más pequeñas */
+        text-align: center;
+    }
+
+    .menu-horizontal a {
+        font-size: 20px;
+        margin: 10px 0;
+    }
+
+    .imagen-logo {
+        max-width: 100%; /* Asegura que la imagen del logo ocupe todo el ancho en pantallas pequeñas */
+        margin-top: 20px;
+    }
+
+    .carrusel-mosaico {
+        height: 250px; /* Ajusta la altura del carrusel para pantallas pequeñas */
+    }
+
+    .imagen-ejemplo {
+        width: 120px; /* Reducción del tamaño de las imágenes del carrusel */
+    }
+
+    .footer-content {
+        flex-direction: column; /* Pie de página en columna */
+        align-items: center;
+    }
+
+    .footer-contact,
+    .footer-legal {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 20px;
+    }
+
+    .footer-description {
+        text-align: center;
+        max-width: 100%;
+    }
+}
+
+/* Media Queries para dispositivos pequeños */
+@media (max-width: 480px) {
+    .menu-horizontal a {
+        font-size: 18px;
+    }
+
+    .oval {
+        font-size: 16px;
+        top: 10px;
+        right: 10px;
+    }
+
+    .footer-logo img {
+        max-width: 300px; /* Reducción del tamaño del logo en pantallas más pequeñas */
+    }
+
+    .footer-description {
+        font-size: 14px;
+    }
+
+    .footer-contact h3,
+    .footer-legal h3 {
+        font-size: 14px;
+    }
+}
+
+/* Contenedor principal que centra todo el contenido */
+.caja-centro {
+    display: flex;
+    flex-direction: column; /* Orden en columna */
+    margin-top: 240px;
+    align-items: center; /* Centra horizontalmente */
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    margin: 0; /* Sin márgenes externos */
+    text-align: center; /* Alinea el texto al centro */
+    background-color: #EAF8F8; /* Fondo claro */
+}
+
+/* Estilo del título */
+.caja-centro h1 {
+    font-size: 36px; /* Tamaño del título */
+    color: #2C3E50; /* Color del título */
+    margin-bottom: 35px; /* Espaciado debajo del título */
+    font-weight: bold; /* Título en negrita */
+}
+
+/* Estilo del texto descriptivo */
+.caja-centro p {
+    font-size: 20px; /* Tamaño del texto descriptivo */
+    line-height: 1.6; /* Espaciado entre líneas */
+    color: #333333; /* Color del texto */
+    max-width: 600px; /* Ancho máximo del texto */
+    margin: 0; /* Sin márgenes */
+}
+
+.texto-abajo:hover {
+    color: #0056b3; /* Color más oscuro al pasar el cursor */
+    text-decoration: underline; /* Subrayado al pasar el cursor */
+}
+.container {
+    display: flex;
+    gap: 20px; /* Espacio horizontal entre imágenes */
+    justify-content: center; /* Centra las imágenes horizontalmente */
+    align-items: flex-start; /* Alinea las imágenes desde arriba */
+    margin-bottom: 80px;
+}
+  
+  .image-item {
+    max-width: 600px; /* Ancho máximo más grande para cada imagen */
+    position: relative; /* Para permitir la manipulación de la posición */
+  }
+  
+  .image-item:nth-child(1) {
+    margin-top: -200px; /* Ajusta la primera imagen un poco hacia abajo */
+  }
+  
+  .image-item:nth-child(2) {
+    margin-top: 0; /* Segunda imagen en su posición normal */
+  }
+  
+  .image-item:nth-child(3) {
+    margin-top: 200px; /* Tercera imagen un poco más abajo */
+  }
+  
+  .image-item img {
+    width: 100%; /* Aumenta el ancho al 100% del contenedor */
+    height: auto; /* Mantén las proporciones */
+    object-fit: cover;
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra elegante */
+  }
+  
+  
+#backbutton {
+    background-color: #e57d33;
+    display: flex;
+    margin-left: 40px;
+    height: 40px;
+    width: 100px;
+    color: #EAF8F8;
+   
+    position: absolute;    /* Fija el botón en la pantalla */
+    left: 2%;
+    top: 10%;          /* Centra el botón horizontalmente */
+   
+}
+
+#backbutton:hover {
+    background-color: #ffa15e;
+}

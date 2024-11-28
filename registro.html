@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.85">
+    <title>Formulario de Registro</title>
+    <link rel="stylesheet" href="css/registro.css">
+</head>
+<body>
+
+    <img src="images/logo.png" class="imagen-logo">
+
+    <div class="content-wrapper">
+        <div class="container">
+            <label for="rol">ROL</label>
+            <select id="rol" name="rol" onchange="mostrarFormulario()">
+                <option value="">Seleccione un rol</option>
+                <option value="cliente">Cliente</option>
+                <option value="repartidor">Repartidor</option>
+            </select>
+        </div>
+
+       
+
+
+        <!-- Formulario de Registro Cliente -->
+        <div id="form-cliente" class="form-section" style="display: none;">
+            <h2>Registro Cliente</h2>
+            <form id="formulario-cliente" enctype="multipart/form-data">
+                <input type="hidden" name="rol" value="cliente">
+                <!-- Campos para Cliente -->
+                <label for="nombre-completo">Nombre Completo</label>
+                <input type="text" id="nombre-completo" name="nombre" placeholder="Ingrese su nombre completo" required><br>
+
+                <label for="documento">Documento de Identidad</label>
+                <input type="text" id="documento" name="documento" placeholder="Ingrese su CI/DNI" required><br>
+
+                <label for="correo">Correo Electrónico</label>
+                <input type="email" id="correo" name="correo" placeholder="Ingrese email" required><br>
+
+                <label for="telefono">Número de Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="Ingrese su teléfono" required><br>
+
+                <label for="direccion">Dirección</label>
+                <input type="text" id="direccion" name="direccion" placeholder="Ingrese su dirección" required><br>
+
+                <label for="usuario">Nombre de Usuario</label>
+                <input type="text" id="usuario" name="usuario" placeholder="Cree un usuario" required><br>
+
+                <label for="contrasena">Contraseña</label>
+                <input type="password" id="contrasena" name="contrasena" placeholder="Cree una contraseña" required><br>
+
+                <label for="foto">Foto de Perfil</label>
+                <input type="file" id="foto" name="foto" accept="image/*" required><br>
+
+                <button type="submit">Registrar Cliente</button>
+            </form>
+        </div>
+
+        <!-- Formulario de Registro Repartidor -->
+        <div id="form-repartidor" class="form-section" style="display: none;">
+            <h2>Registro Repartidor</h2>
+            <form id="formulario-repartidor" enctype="multipart/form-data">
+                <input type="hidden" name="rol" value="repartidor">
+                <!-- Campos para Repartidor -->
+                <label for="nombre-completo-rep">Nombre Completo</label>
+                <input type="text" id="nombre-completo-rep" name="nombre" placeholder="Ingrese su nombre completo" required><br>
+
+                <label for="documento-rep">Documento de Identidad (ID Repartidor)</label>
+                <input type="text" id="documento-rep" name="documento" placeholder="Ingrese su documento de identidad" required><br>
+
+                <label for="correo-rep">Correo Electrónico</label>
+                <input type="email" id="correo-rep" name="correo" placeholder="Ingrese email" required><br>
+
+                <label for="telefono-rep">Número de Teléfono</label>
+                <input type="tel" id="telefono-rep" name="telefono" placeholder="Ingrese su teléfono" required><br>
+
+                <label for="placa">Placa del Vehículo</label>
+                <input type="text" id="placa" name="placa" placeholder="Ingresa la placa del vehículo" required><br>
+
+                <label for="usuario-rep">Nombre de Usuario</label>
+                <input type="text" id="usuario-rep" name="usuario" placeholder="Cree un usuario" required><br>
+
+                <label for="contrasena-rep">Contraseña</label>
+                <input type="password" id="contrasena-rep" name="contrasena" placeholder="Cree una contraseña" required><br>
+
+                <label for="foto-rep">Foto de Perfil</label>
+                <input type="file" id="foto-rep" name="foto" accept="image/*" required><br>
+
+                <button type="submit">Registrar Repartidor</button>
+            </form>
+
+
+        </div>
+        <button id="backbutton" onclick="window.location.href='index.html'">Regresar</button>
+
+    </div>
+
+     <!-- Pie de página -->
+     <footer>
+        <!-- Logotipo en la parte superior -->
+        <div class="footer-logo">
+            <img src="images/logo.png" class="imagen-footer" alt="Logotipo del restaurante" title="Restaurante Miramar">
+        </div>
+
+        <div class="footer-content">
+            <!-- Descripción -->
+            <div class="footer-description">
+                <p>
+                    En un entorno único, Gastrofood ofrece una cocina moderna con raíces tradicionales, utilizando ingredientes de primera calidad y un servicio refinado. 
+                    Disfruta de platos creativos y una experiencia gastronómica excepcional en cada visita.
+                </p>
+            </div>
+
+            <!-- Contacto -->
+            <div class="footer-contact">
+                <h3>Contacto</h3>
+                <p>Email: <a href="mailto:restaurant@GastroFood.com">restaurant@GastroFood.com</a></p>
+                <div class="social-icons">
+                    <a href="#">📷 Instagram</a>
+                    <a href="mailto:restaurant@GastroFood.com">📧 Correo electrónico</a>
+                </div>
+            </div>
+
+            <div class="footer-legal">
+                <p>Aviso legal</p>
+                <p>Política de privacidad</p>
+                <p>Política de cookies</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/registro.js"></script>
+</body>
+</html>

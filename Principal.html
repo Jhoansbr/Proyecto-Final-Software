@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Visualizacion  de las entradas del menu.">
+    <title>Entradas</title>
+    <link rel="stylesheet" href="css/menú.css">
+    <link rel="stylesheet" href="css/entradas.css">
+
+</head>
+<body>
+    <header>
+        <img src="images/logo.png" class="imagen-logo" alt="Logo del Restaurante">
+        <ul class="menu-horizontal">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="menú.html">Menú</a></li>
+            <li><a href="reservas.html">Reservas</a></li>
+            <li><a href="pedidos.html">Pedidos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+  
+        <div class="content-wrapper" id="reservas">
+            <div class="imagen-contenedor">
+                <!-- Imagen de perfil del usuario o predeterminada -->
+                <img id="foto-perfil" src="images/Acceder.png" class="Acceder"> <!-- Imagen predeterminada -->
+                <a id="acceder-enlace" href="login.html" class="texto-abajo">Acceder</a> <!-- Enlace de acceso -->
+                <!-- Opciones de Cerrar sesión (ocultas inicialmente) -->
+                <div id="cerrar-sesion" style="display:none; ">
+                    <a href="#" id="cerrar-enlace">Cerrar sesión</a>
+                </div>
+            </div>
+    
+    <!-- Sección de comida -->
+   <main>
+    <h2>PLATOS PRINCIPALES</h2>
+    <a  href="menú.html"><button id="btnRegresar">Regresar</button></a>
+    <section class="menu-grid">
+        <div class="menu-item">
+            <img src="images/p1.jpg" alt="Plato 1">
+            <p class="title">Pollo en Salsa de Champiñones</p>
+            <p class="description">Pechuga de pollo jugosa, cocinada a la perfección en una cremosa salsa de champiñones, acompañada de arroz blanco y vegetales al vapor.</p>
+            <p class="price">Precio por persona: 40.000 $</p>
+        </div>
+
+        <div class="menu-item">
+            <img src="images/p2.jpg" alt="Plato 2">
+            <p class="title">Lomito a la Parrilla</p>
+            <p class="description">Filete de res marinado con especias, servido con papas al horno y una ensalada fresca de arúgula y tomate cherry.</p>
+            <p class="price">Precio por persona: 55.000 $</p>
+        </div>
+
+
+        <div class="menu-item">
+            <img src="images/p3.jpg" alt="Plato 3">
+            <p class="title">Pasta Alfredo con Camarones</p>
+            <p class="description">Pasta fettuccine bañada en una cremosa salsa Alfredo con ajo, queso parmesano y camarones salteados.</p>
+            <p class="price">Precio por persona: 65.000 $</p>
+        </div>
+
+        <div class="menu-item">
+            <img src="images/p4.jpg" alt="Plato 4">
+            <p class="title"> Pescado Tropical</p>
+            <p class="description">Filete de pescado a la plancha, cubierto con una salsa de mango y piña, acompañado de arroz con coco y ensalada mixta.</p>
+            <p class="price">Precio por persona: 58.000 $</p>
+        </div>
+
+        <div class="menu-item">
+            <img src="images/p5.jpg" alt="Plato 5">
+            <p class="title">Costillas BBQ</p>
+            <p class="description">Costillas de cerdo bañadas en salsa BBQ casera, servidas con puré de papas cremoso y mazorca a la parrilla.</p>
+            <p class="price">Precio por persona: 36.000 $</p>
+        </div>
+
+        <div class="menu-item">
+            <img src="images/p6.jpg" alt="Plato 6">
+            <p class="title">Enchiladas Mexicanas</p>
+            <p class="description">Tortillas rellenas de pollo desmenuzado, bañadas en salsa roja y gratinadas con queso, servidas con frijoles refritos y guacamole.</p>
+            <p class="price">Precio por persona: 47.000 $</p>
+        </div>
+    </section>
+</main>
+
+
+     <!-- Pie de página -->
+     <footer>
+        <!-- Logotipo en la parte superior -->
+        <div class="footer-logo">
+            <img src="images/logo.png" class="imagen-footer" alt="Logotipo del restaurante" title="Restaurante Miramar">
+        </div>
+
+        <div class="footer-content">
+            <!-- Descripción -->
+            <div class="footer-description">
+                <p>
+                    En un entorno único, Gastrofood ofrece una cocina moderna con raíces tradicionales, utilizando ingredientes de primera calidad y un servicio refinado. 
+                    Disfruta de platos creativos y una experiencia gastronómica excepcional en cada visita.
+                </p>
+            </div>
+
+            <!-- Contacto -->
+            <div class="footer-contact">
+                <h3>Contacto</h3>
+                <p>Email: <a href="mailto:restaurant@GastroFood.com">restaurant@GastroFood.com</a></p>
+                <div class="social-icons">
+                    <a href="#">📷 Instagram</a>
+                    <a href="mailto:restaurant@GastroFood.com">📧 Correo electrónico</a>
+                </div>
+            </div>
+
+            <div class="footer-legal">
+                <p>Aviso legal</p>
+                <p>Política de privacidad</p>
+                <p>Política de cookies</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/funciones.js"></script>
+
+</body>
+</html>

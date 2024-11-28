@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Login</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <img src="images/logo.png" class="imagen-logo">
+
+    <main class="login-section">
+        <form class="login-form" id="login-form">
+            <h2>INGRESAR</h2>
+            <div class="input-group">
+                <label for="username">Usuario</label>
+                <div class="input-container">
+                    <input type="text" id="username" name="username" placeholder="Nombre de Usuario" required>
+                    <span class="icon">👤</span>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Contraseña</label>
+                <div class="input-container">
+                    <input type="password" id="password" name="password" placeholder="Contraseña" required>
+                    <span class="icon">🔒</span>
+                </div>
+            </div>
+            <div class="signup-link">
+                <a href="recuperacion contraseña o usuario.html">¿Olvidó su nombre de usuario o contraseña?</a>
+
+            </div>
+            <div class="signup-link">
+                <a href="registro.html">¿No tienes cuenta?</a>
+            </div>
+            <button type="submit">ACCEDER</button>
+
+            
+
+        </form>
+        <button id="backbutton" onclick="window.location.href='index.html'">Regresar</button>
+    </main>
+
+    <footer>
+        <!-- Logotipo en la parte superior -->
+        <div class="footer-logo">
+            <img src="images/logo.png" class="imagen-footer" alt="Logotipo del restaurante" title="Restaurante Miramar">
+        </div>
+
+        <div class="footer-content">
+            <!-- Descripción -->
+            <div class="footer-description">
+                <p>
+                    En un entorno único, Gastrofood ofrece una cocina moderna con raíces tradicionales, utilizando ingredientes de primera calidad y un servicio refinado. 
+                    Disfruta de platos creativos y una experiencia gastronómica excepcional en cada visita.
+                </p>
+            </div>
+
+            <!-- Contacto -->
+            <div class="footer-contact">
+                <h3>Contacto</h3>
+                <p>Email: <a href="mailto:restaurant@GastroFood.com">restaurant@GastroFood.com</a></p>
+                <div class="social-icons">
+                    <a href="#">📷 Instagram</a>
+                    <a href="mailto:restaurant@GastroFood.com">📧 Correo electrónico</a>
+                </div>
+            </div>
+
+            <div class="footer-legal">
+                <p>Aviso legal</p>
+                <p>Política de privacidad</p>
+                <p>Política de cookies</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/login.js"></script>
+</body>
+</html>

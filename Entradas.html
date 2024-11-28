@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Visualización de las entradas del menú.">
+    <title>Entradas</title>
+    <link rel="stylesheet" href="css/menú.css">
+    <link rel="stylesheet" href="css/entradas.css">
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header>
+        <img src="images/logo.png" class="imagen-logo" alt="Logo del Restaurante">
+        <ul class="menu-horizontal">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="menú.html">Menú</a></li>
+            <li><a href="reservas.html">Reservas</a></li>
+            <li><a href="pedidos.html">Pedidos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+  
+        <div class="content-wrapper" id="reservas">
+            <div class="imagen-contenedor">
+                <!-- Imagen de perfil del usuario o predeterminada -->
+                <img id="foto-perfil" src="images/Acceder.png" class="Acceder" alt="Foto de perfil">
+                <a id="acceder-enlace" href="login.html" class="texto-abajo">Acceder</a>
+                <!-- Opciones de Cerrar sesión (ocultas inicialmente) -->
+                <div id="cerrar-sesion" style="display:none;">
+                    <a href="#" id="cerrar-enlace">Cerrar sesión</a>
+                </div>
+            </div>
+        </div>
+    </header>
+  
+    <!-- Sección de comidas -->
+    <main>
+        <h2>ENTRADAS</h2>
+        <a href="menú.html"><button id="btnRegresar">Regresar</button></a>
+
+        <section class="menu-grid">
+            <!-- Entrada 1 -->
+            <div class="menu-item">
+                <img src="images/primera1.jpg" alt="Entrada 1">
+                <p class="title">Bruschetta</p>
+                <p class="description">Tostadas de pan rústico untadas con ajo y aceite de oliva, cubiertas con tomate picado, albahaca fresca y queso parmesano.</p>
+                <p class="price">Precio por persona: 7.000 $</p>
+            </div>
+
+            <!-- Entrada 2 -->
+            <div class="menu-item">
+                <img src="images/segunda.jpg" alt="Entrada 2">
+                <p class="title">Rollo Primavera</p>
+                <p class="description">Rollos de papel de arroz rellenos de vegetales frescos, camarones o carne, servidos con salsa agridulce o de soya.</p>
+                <p class="price">Precio por persona: 10.000 $</p>
+            </div>
+
+            <!-- Entrada 3 -->
+            <div class="menu-item">
+                <img src="images/tercera.jpg" alt="Entrada 3">
+                <p class="title">Ceviche</p>
+                <p class="description">Pescado o mariscos marinados en jugo de limón, mezclados con cebolla, ají, cilantro y camote.</p>
+                <p class="price">Precio por persona: 13.000 $</p>
+            </div>
+
+            <!-- Entrada 4 -->
+            <div class="menu-item">
+                <img src="images/quinta.jpg" alt="Entrada 4">
+                <p class="title">Hummus con Pan Pita</p>
+                <p class="description">Crema hecha a base de garbanzos, tahini, ajo, jugo de limón, aceite de oliva y pan pita tibio.</p>
+                <p class="price">Precio por persona: 8.000 $</p>
+            </div>
+
+            <!-- Entrada 5 -->
+            <div class="menu-item">
+                <img src="images/sexta.jpg" alt="Entrada 5">
+                <p class="title">Caprese</p>
+                <p class="description">Rodajas de tomate, mozzarella fresca, albahaca, sal, pimienta y aceite de oliva.</p>
+                <p class="price">Precio por persona: 6.000 $</p>
+            </div>
+
+            <!-- Entrada 6 -->
+            <div class="menu-item">
+                <img src="images/cuarta.jpg" alt="Entrada 6">
+                <p class="title">Tostones con Guacamole</p>
+                <p class="description">Rodajas de plátano verde fritas, acompañadas de guacamole fresco preparado con aguacate, cebolla, tomate, cilantro y jugo de limón.</p>
+                <p class="price">Precio por persona: 7.000 $</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <div class="footer-logo">
+            <img src="images/logo.png" class="imagen-footer" alt="Logotipo del restaurante" title="Restaurante Miramar">
+        </div>
+
+        <div class="footer-content">
+            <!-- Descripción -->
+            <div class="footer-description">
+                <p>En un entorno único, Gastrofood ofrece una cocina moderna con raíces tradicionales, utilizando ingredientes de primera calidad y un servicio refinado. Disfruta de platos creativos y una experiencia gastronómica excepcional en cada visita.</p>
+            </div>
+
+            <!-- Contacto -->
+            <div class="footer-contact">
+                <h3>Contacto</h3>
+                <p>Email: <a href="mailto:restaurant@GastroFood.com">restaurant@GastroFood.com</a></p>
+                <div class="social-icons">
+                    <a href="#">📷 Instagram</a>
+                    <a href="mailto:restaurant@GastroFood.com">📧 Correo electrónico</a>
+                </div>
+            </div>
+
+            <!-- Enlaces legales -->
+            <div class="footer-legal">
+                <p>Aviso legal</p>
+                <p>Política de privacidad</p>
+                <p>Política de cookies</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/funciones.js"></script>
+</body>
+</html>

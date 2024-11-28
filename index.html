@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú con Imagen y Carrusel</title>
+    <link rel="stylesheet" href="css/style.css"> <!-- Vincula el archivo CSS -->
+</head>
+<body>
+
+    <!-- Menú horizontal -->
+    <header>
+        <img src="images/logo.png" class="imagen-logo" alt="Logo del Restaurante">
+        <ul class="menu-horizontal">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="menú.html">Menú</a></li>
+            <li><a href="reservas.html">Reservas</a></li>
+            <li><a href="pedidos.html">Pedidos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+        
+    <div class="content-wrapper" id="reservas">
+        <div class="imagen-contenedor">
+            <!-- Imagen de perfil del usuario o predeterminada -->
+            <img id="foto-perfil" src="images/Acceder.png" class="Acceder"> <!-- Imagen predeterminada -->
+            <a id="acceder-enlace" href="login.html" class="texto-abajo">Acceder</a> <!-- Enlace de acceso -->
+            <!-- Opciones de Cerrar sesión (ocultas inicialmente) -->
+            <div id="cerrar-sesion" style="display:none; ">
+                <a href="#" id="cerrar-enlace">Cerrar sesión</a>
+            </div>
+        </div>
+
+        <div class="carrusel-mosaico">
+            <div class="imagenes">
+                <img src="images/imagen1.jpg" alt="Imagen 1">
+                <img src="images/imagen2.jpg" alt="Imagen 2">
+                <img src="images/imagen3.jpg" alt="Imagen 3">
+                <img src="images/imagen4.jpg" alt="Imagen 4">
+                <!-- Duplicar las imágenes para crear el bucle -->
+                <img src="images/imagen1.jpg" alt="Imagen 1">
+                <img src="images/imagen2.jpg" alt="Imagen 2">
+                <img src="images/imagen3.jpg" alt="Imagen 3">
+                <img src="images/imagen4.jpg" alt="Imagen 4">
+            </div>
+        </div>
+
+        <div class="caja-centro">
+            <h1>Bienvenidos a Gastrofood</h1>
+            <p>
+                Descubre una experiencia culinaria única en Gastrofood, donde la tradición y la innovación se fusionan en cada plato. Trabajamos con ingredientes frescos y seleccionados con esmero para ofrecerte una explosión de sabores inolvidables. Vive momentos extraordinarios en cada visita.
+                En Gastrofood, la tradición se encuentra con la innovación para crear platos que deleitan tus sentidos. ¡Ven y vive una experiencia gastronómica inigualable!
+            </p>
+        </div>
+
+        <div class="container">
+            <!-- Imagen 1 -->
+            <div class="image-item">
+                <img src="images/imagen1.jpg" class="imagen1" alt="Imagen 1">
+            </div>
+            <!-- Imagen 2 -->
+            <div class="image-item">
+                <img src="images/imagen2.jpg" class="imagen2" alt="Imagen 2">
+            </div>
+            <!-- Imagen 3 -->
+            <div class="image-item">
+                <img src="images/imagen3.jpg" class="imagen3" alt="Imagen 3">
+            </div>
+        </div>
+    </div>  
+
+    <footer>
+        <!-- Logotipo en la parte superior -->
+        <div class="footer-logo">
+            <img src="images/logo.png" class="imagen-footer" alt="Logotipo del restaurante" title="Restaurante Miramar">
+        </div>
+
+        <div class="footer-content">
+            <!-- Descripción -->
+            <div class="footer-description">
+                <p>
+                    En un entorno único, Gastrofood ofrece una cocina moderna con raíces tradicionales, utilizando ingredientes de primera calidad y un servicio refinado. 
+                    Disfruta de platos creativos y una experiencia gastronómica excepcional en cada visita.
+                </p>
+            </div>
+
+            <!-- Contacto -->
+            <div class="footer-contact">
+                <h3>Contacto</h3>
+                <p>Email: <a href="mailto:restaurant@GastroFood.com">restaurant@GastroFood.com</a></p>
+                <div class="social-icons">
+                    <a href="#">📷 Instagram</a>
+                    <a href="mailto:restaurant@GastroFood.com">📧 Correo electrónico</a>
+                </div>
+            </div>
+
+            <div class="footer-legal">
+                <p>Aviso legal</p>
+                <p>Política de privacidad</p>
+                <p>Política de cookies</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

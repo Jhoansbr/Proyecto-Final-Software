@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Visualizacion del menu.">
+    <title>Menú</title>
+    <link rel="stylesheet" href="css/menu.css">
+
+</head>
+<body>
+    <!-- Encabezado -->
+    <header>
+        <header>
+            <img src="images/logo.png" class="imagen-logo" alt="Logo del Restaurante">
+            <ul class="menu-horizontal">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="menú.html">Menú</a></li>
+                <li><a href="reservas.html">Reservas</a></li>
+                <li><a href="pedidos.html">Pedidos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+      
+            <div class="content-wrapper" id="reservas">
+                <div class="imagen-contenedor">
+                    <!-- Imagen de perfil del usuario o predeterminada -->
+                    <img id="foto-perfil" src="images/Acceder.png" class="Acceder"> <!-- Imagen predeterminada -->
+                    <a id="acceder-enlace" href="login.html" class="texto-abajo">Acceder</a> <!-- Enlace de acceso -->
+                    <!-- Opciones de Cerrar sesión (ocultas inicialmente) -->
+                    <div id="cerrar-sesion" style="display:none; ">
+                        <a href="#" id="cerrar-enlace">Cerrar sesión</a>
+                    </div>
+                </div>
+    
+    <!-- Sección de menú -->
+    <main>
+        <h2>NUESTRO MENÚ</h2>
+        <section class="menu-grid">
+            <div class="menu-item">
+                <img src="images/entrada1.jpg" alt="Entradas">
+                <a href="Entradas.html"><button>Entradas</button></a>
+            </div>
+            <div class="menu-item">
+                <img src="images/plato prin1.jpg" alt="Platos Principales">
+                <a href="Principal.html"><button>Platos Principales</button></a>
+            </div>
+            <div class="menu-item">
+                <img src="images/postres prin1.jpg" alt="Postres">
+                <a href="Postres.html"><button>Postres</button></a>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- falta acomodar el main adentro -->
+    <script src="js/menu.js"></script>
+
+    <!-- Pie de página -->
+    <footer>
+        <!-- Logotipo en la parte superior -->
+        <div class="footer-logo">
+            <img src="images/logo.png" class="imagen-footer" alt="Logotipo del restaurante" title="Restaurante Miramar">
+        </div>
+
+        <div class="footer-content">
+            <!-- Descripción -->
+            <div class="footer-description">
+                <p>
+                    En un entorno único, Gastrofood ofrece una cocina moderna con raíces tradicionales, utilizando ingredientes de primera calidad y un servicio refinado. 
+                    Disfruta de platos creativos y una experiencia gastronómica excepcional en cada visita.
+                </p>
+            </div>
+
+            <!-- Contacto -->
+            <div class="footer-contact">
+                <h3>Contacto</h3>
+                <p>Email: <a href="mailto:restaurant@GastroFood.com">restaurant@GastroFood.com</a></p>
+                <div class="social-icons">
+                    <a href="#">📷 Instagram</a>
+                    <a href="mailto:restaurant@GastroFood.com">📧 Correo electrónico</a>
+                </div>
+            </div>
+
+            <div class="footer-legal">
+                <p>Aviso legal</p>
+                <p>Política de privacidad</p>
+                <p>Política de cookies</p>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+</html>

@@ -1,0 +1,822 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-between;
+    background-color: #FAFAFA; /* Fondo blanco */
+    border-bottom: 1px solid #E0E0E0;
+    overflow-y: auto; /* Permite que el contenido se desplace si se sale de la vista */
+    overflow-x: hidden; /* Evita desplazamiento lateral no deseado */
+}
+
+/* Estilo de la imagen */
+.imagen-logo {
+    display: block;
+    margin: 30px auto; /* Centra la imagen horizontalmente */
+    max-width: 900px; /* Ajusta el tamaño de la imagen */
+    margin-top: 30px;
+}
+
+/* Estilo del menú horizontal */
+.menu-horizontal {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 5px;
+    margin: 0;
+    color: #FFFFFF;
+    background-color: #2C3E50;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.465); /* Sombra del menú */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en varias filas en pantallas pequeñas */
+}
+
+.menu-horizontal li {
+    margin: 0 10px;
+}
+
+.menu-horizontal a {
+    text-decoration: none;
+    font-size: 25px;
+    color: #FFFFFF;
+    padding: 2px 2px;
+    border-radius: 5px; /* Para que se vean redondeados los enlaces */
+    transition: all 0.3s ease; /* Transición para efecto suave */
+}
+
+.menu-horizontal a:hover {
+    background-color: #f2eaba; /* Fondo amarillo claro al pasar el mouse */
+    color: #000000; /* Color de texto al pasar el mouse */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Agrega un sombreado extra */
+}
+
+.content-wrapper {
+    flex: 1; /* Esto asegura que el contenido ocupe todo el espacio disponible */
+    padding: 20px;
+    gap: px;
+    background-color: #E8F8F5; /* Color base */
+}
+
+/* Estilo del óvalo */
+.oval {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-align: center;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.oval:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo para el contenedor de imagen y texto */
+.imagen-contenedor {
+    position: absolute;
+    top: 25px;
+    right: 20px;
+    text-align: center;
+}
+
+/* Estilo para la imagen de acceso */
+.Acceder {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Estilo para el enlace debajo de la imagen */
+.texto-abajo {
+    display: block;
+    margin-top: 0px;
+    font-size: 17px;
+    color: #000000;
+    text-decoration: none;
+}
+
+.texto-abajo:hover {
+    color: #007BFF;
+    text-decoration: underline;
+}
+
+/* Contenedor de Contenido */
+.content-wrapper {
+    flex: 1; /* Esto asegura que el contenido ocupe todo el espacio disponible */
+    padding: 20px;
+    gap: 20px;
+    background-color: #E8F8F5; /* Color base */
+}
+
+
+/* Sección de Reservas */
+.reservas {
+    background-color: #FCF3CF; /* Beige claro */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 1100px;
+    z-index: 1;
+}
+
+/* Botón de Reservar */
+button#reservar {
+    margin-top: 50px;
+    padding: 12px;
+    width: 40%;
+    background-color:#D2691E ; /* Color suave y relajante */
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button#reservar:hover {
+    background-color:#E65A2D; /* Uno más oscuro al pasar el ratón */
+}
+
+/* Títulos y etiquetas con un toque más moderno */
+.reservas h2 {
+    text-align: center;
+    color: #7D6608; /* Color gris suave */
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.opciones {
+    display: flex;
+    flex-direction: column; /* Apila los elementos verticalmente */
+    align-items: center; /* Centra los elementos horizontalmente */
+    gap: 10px; /* Espaciado entre el párrafo y las opciones */
+    margin-top: 50px;
+}
+
+.opciones .opciones-lista {
+    display: flex; /* Alinea las opciones en fila horizontal */
+    gap: 15px; /* Espaciado entre las opciones */
+    flex-wrap: wrap; /* Permite que las opciones se muevan a la siguiente fila si es necesario */
+}
+
+.opciones label {
+    display: inline-flex; /* Alinea el texto y el checkbox en cada etiqueta */
+    align-items: center;
+    gap: 5px; /* Espaciado entre el checkbox y el texto */
+}
+.opciones p {
+    font-weight: bold; /* Negrita */
+    font-size: 18px; /* Tamaño de fuente más grande */
+    color: #000000; /* Color llamativo */
+    text-align: center; /* Asegura que el texto esté centrado */
+    margin: 0; /* Remueve márgenes adicionales */
+    margin-bottom:20px ;
+}
+
+/* Estilo del calendario */
+.calendario {
+    display: flex;
+    gap: 10px;
+    max-width: 100%;
+    margin: 5px 0;
+}
+
+.seleccion, .personas {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+/* Inputs con bordes suaves */
+input[type="date"], select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #BFC9CA;
+    width: 200px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: #f9f9f9; /* Fondo gris muy claro */
+}
+
+label {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+/* Sección de Personalización */
+.personalizacion {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.personalizacion h3 {
+    text-align: center;
+    color: #333;
+    font-size: 20px;
+    margin: 40px;
+    margin-bottom: 15px;
+}
+
+
+.checkboxes {
+    display: flex;
+    gap:25px; /* Espaciado entre los checkboxes */
+    justify-content: center;
+}
+
+/* Estilo de la Imagen del Logo */
+.imagen-logo {
+    display: block;
+    margin: 30px auto;
+    max-width: 800px;
+    margin-top: 20px;
+}
+
+footer {
+    padding: 20px;
+    background-color: #17202A;
+    text-align: center;
+    font-size: 14px;
+    color: #D5DBDB;
+    margin-top: 0px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;  /* Esto distribuye los elementos (uno a la izquierda y otro a la derecha) */
+    align-items: flex-start;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-form {
+    width: 60%;  /* El formulario ocupará el 45% del ancho disponible */
+    height: auto;  /* Ajusta la altura automáticamente al contenido */
+    margin-bottom: 0px;
+}
+
+.form-container {
+    background-color: #FCF3CF; 
+    padding: 5px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 10px;
+    margin: 10px auto;  /* Ajusta el margen para centrar los campos */
+    width: 80%;        /* Hace que los inputs y el textarea ocupen todo el ancho disponible dentro de su contenedor */
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    display: block;
+}
+
+.contact-form button {
+    width: 100%;  /* Hace que el botón ocupe el 100% del ancho disponible */
+    padding: 10px;
+    margin: 5px auto;
+    background-color: #da7f08;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.contact-form button:hover {
+    background-color: #45a049;
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;  /* Alinea los iconos a la izquierda */
+}
+
+.social-icons a {
+    text-decoration: none;
+    margin: 10px 0;
+    color: #333;
+}
+
+.social-icons a:hover {
+    color: #007BFF;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-form, .social-icons {
+        width: 100%;
+        text-align: center;
+    }
+}
+/* Estilos de pie de página */
+footer {
+  background-color: #17202A; /* Color oscuro */
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #D5DBDB; /* Color claro */
+  margin-top: 0px;
+}
+
+/* Iconos sociales en el pie de página */
+footer .social-icons a {
+  margin: 0 5px;
+  font-size: 18px;
+  color: #AED6F1; /* Color azul claro */
+  text-decoration: none;
+}
+
+footer .social-icons a:hover {
+  color: #5499C7; /* Color azul más oscuro al pasar el ratón */
+}
+
+/* Fondo del modal */
+.modal {
+    display: none; /* Ocultar por defecto */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Fondo del modal */
+.modal {
+    display: none; /* Ocultar por defecto */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenido del modal */
+.modal-contenido {
+    background-color: #fff; /* Fondo blanco */
+    border-radius: 10px;
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Botón de cerrar el modal */
+.cerrar-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #aaa;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.cerrar-modal:hover {
+    color: #000;
+}
+
+/* Título del modal */
+.modal-contenido h2 {
+    color: #d9534f; /* Color rojo */
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+/* Mensaje del modal */
+.modal-contenido p {
+    color: #333;
+    font-size: 16px;
+    margin: 10px 0;
+}.flatpickr-day.disabled {
+    background: #e00b0b !important; /* Fondo rojo claro */
+    color: #000000 !important; /* Texto rojo */
+    cursor: not-allowed; /* Mostrar cursor no permitido */
+}.opcion-hora-ocupada {
+    color: #ff0000;
+    pointer-events: none;
+}
+.modal-contenido-grande {
+    position: absolute; /* Cambiar a absolute o fixed si es necesario */
+    top: 40px; /* Ajusta la distancia desde la parte superior */
+    left: 30px; /* Ajusta la distancia desde la parte izquierda */
+    background-color: white;
+    width: 100%;
+    max-width: 900px;
+    max-height: auto;
+    padding: 20px;
+    align-items: center;
+    border-radius: 10px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 9999; /* Para asegurarte de que el modal esté por encima de otros elementos */
+}
+
+.contenedor-platos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+#listaPlatos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual tamaño */
+    gap: 20px; /* Espacio entre las columnas y filas */
+    margin-top: 20px; /* Espacio superior para no pegarse al contenido anterior */
+}
+
+.plato-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ddd; /* Borde alrededor de cada plato */
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.imagen-plato {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+#confirmarPlatos {
+    background-color: #D2691E; /* Color similar al botón "Reservar" */
+    color: white; /* Texto blanco */
+    border: none; /* Sin bordes */
+    padding: 12px 20px; /* Espaciado ajustado */
+    text-align: center; /* Texto centrado */
+    font-size: 16px; /* Tamaño del texto */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    border-radius: 5px; /* Bordes redondeados */
+    width: 100%; /* Ajusta el ancho al contenedor */
+    max-width: 250px; /* Tamaño máximo */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+    font-family: 'Arial', sans-serif; /* Tipografía legible */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+}
+
+/* Efecto hover para el botón */
+#confirmarPlatos:hover {
+    background-color: #E65A2D; /* Un tono más oscuro para el hover */
+    transform: scale(1.02); /* Agrandamiento leve */
+}
+
+/* Efecto cuando se presiona el botón */
+#confirmarPlatos:active {
+    transform: scale(0.98); /* Reduce ligeramente el tamaño al presionar */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3); /* Reduce la sombra */
+}
+
+.descripcion-plato {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.cantidad-input {
+    width: 50px;
+    margin-top: 5px;
+}
+.descripcion-plato h3 {
+    margin: 5px 0;
+}
+
+.descripcion-plato p {
+    font-size: 0.9em;
+    margin: 5px 0 10px;
+}
+.categorias-nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.categoria-btn {
+    padding: 10px 15px;
+    border: none;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.categoria-btn:hover, .categoria-btn.active {
+    background-color: #d0d0d0;
+}
+
+.plato-item {
+    display: none; /* Los platos se mostrarán según la categoría seleccionada */
+}
+
+.plato-item.activo {
+    display: flex; /* Muestra los platos filtrados */
+}
+.carrito {
+    position: fixed;
+    top: 40px; /* Ajusta la distancia desde la parte superior */
+    right:20px; /* Ajusta la distancia desde la parte derecha */
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    width: 400px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.carrito h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.carrito-item {
+    margin-bottom: 10px;
+}
+
+.carrito-item button {
+    background-color: #e74c3c; /* Rojo vivo */
+    color: white; /* Texto blanco */
+    border: none; /* Sin bordes */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 8px 12px; /* Espaciado interno para mejor apariencia */
+    font-size: 14px; /* Tamaño de fuente legible */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Efectos suaves */
+    font-family: 'Arial', sans-serif; /* Fuente clara y consistente */
+}
+
+/* Efecto hover para los botones en carrito */
+.carrito-item button:hover {
+    background-color: #D2691E; /* Naranja suave */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+}
+
+/* Estilo para el botón #confirmarCarrito */
+#confirmarCarrito {
+    background-color: #D2691E; /* Naranja atractivo */
+    color: white; /* Texto blanco */
+    border: none; /* Sin bordes */
+    padding: 12px 20px; /* Tamaño más grande para destacar */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    max-width: 250px; /* Tamaño máximo */
+    text-align: center; /* Texto centrado */
+    font-size: 16px; /* Tamaño de texto más destacado */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Efectos suaves */
+    font-family: 'Arial', sans-serif; /* Fuente clara */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra para profundidad */
+}
+
+/* Efecto hover para #confirmarCarrito */
+#confirmarCarrito:hover {
+    background-color: #E65A2D; /* Tono más oscuro en hover */
+    transform: scale(1.02); /* Pequeño agrandamiento */
+}
+
+/* Efecto activo para #confirmarCarrito */
+#confirmarCarrito:active {
+    transform: scale(0.98); /* Ligera reducción al hacer clic */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3); /* Reduce la sombra al presionar */
+}
+
+/* Estructura carrito*/
+
+#carritoContenido th, #carritoContenido td {
+    padding: 12px;  /* Aumenta el espacio dentro de las celdas */
+    text-align: center; /* Centra el texto de las celdas */
+    border: 1px solid #ddd; /* Añade borde para las celdas */
+}
+
+#carritoContenido h3 {
+    margin-bottom: 10px; /* Espacio debajo del título */
+}
+
+
+/* Estilos generales del pie de página */
+footer {
+    background-color: #f8f8f8;
+    padding: 0px 0px;
+    color: #333;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    
+}
+
+/* Logotipo centrado en la parte superior */
+.footer-logo {
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.footer-logo img {
+    max-width: 450px;
+    height: auto;
+}
+
+/* Contenido del pie de página (debajo del logotipo) */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+    gap: 20px;
+}
+
+/* Descripción */
+.footer-description {
+    font-family: 'Georgia', serif;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #333;
+    margin: 0px 0;
+    text-align: justify;
+    max-width: 340px;
+}
+
+/* Contacto */
+.footer-contact {
+    flex: 1;
+    font-size: 14px;
+    text-align: left;
+    margin-left: 120px;
+    margin-right: 120px;
+    margin-top: 10px;
+}
+
+.footer-contact h3 {
+    font-size: 16px;
+    color: #00579c;
+    margin-bottom: 10px;
+}
+
+.footer-contact a {
+    color: #00579c;
+    text-decoration: none;
+}
+
+.footer-contact a:hover {
+    text-decoration: underline;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+/* Enlaces legales */
+.footer-legal {
+    flex: 1;
+    text-align: left;
+}
+
+.footer-legal h3 {
+    font-size: 16px;
+    color: #00579c;
+    margin-bottom: 10px;
+}
+
+.footer-legal a {
+    color: #00579c;
+    text-decoration: none;
+}
+
+.footer-legal a:hover {
+    text-decoration: underline;
+}
+
+/* Pie de página inferior */
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+    color: #666;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
+
+/* Media Queries para dispositivos móviles */
+@media (max-width: 768px) {
+    .menu-horizontal {
+        flex-direction: column; /* Menú vertical en pantallas más pequeñas */
+        text-align: center;
+    }
+
+    .menu-horizontal a {
+        font-size: 20px;
+        margin: 10px 0;
+    }
+
+    .imagen-logo {
+        max-width: 100%; /* Asegura que la imagen del logo ocupe todo el ancho en pantallas pequeñas */
+        margin-top: 20px;
+    }
+
+    .carrusel-mosaico {
+        height: 250px; /* Ajusta la altura del carrusel para pantallas pequeñas */
+    }
+
+    .imagen-ejemplo {
+        width: 120px; /* Reducción del tamaño de las imágenes del carrusel */
+    }
+
+    .footer-content {
+        flex-direction: column; /* Pie de página en columna */
+        align-items: center;
+    }
+
+    .footer-contact,
+    .footer-legal {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 20px;
+    }
+
+    .footer-description {
+        text-align: center;
+        max-width: 100%;
+    }
+}
+
+/* Media Queries para dispositivos pequeños */
+@media (max-width: 480px) {
+    .menu-horizontal a {
+        font-size: 18px;
+    }
+
+    .oval {
+        font-size: 16px;
+        top: 10px;
+        right: 10px;
+    }
+
+    .footer-logo img {
+        max-width: 300px; /* Reducción del tamaño del logo en pantallas más pequeñas */
+    }
+
+    .footer-description {
+        font-size: 14px;
+    }
+
+    .footer-contact h3,
+    .footer-legal h3 {
+        font-size: 14px;
+    }
+}

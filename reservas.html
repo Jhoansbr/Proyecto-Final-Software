@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sistema de reservas en línea para restaurantes.">
+    <title>Menú y Reservas</title>
+    <link rel="stylesheet" href="css/reservas.css">
+    
+    <!-- Flatpickr -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Modal de Alerta -->
+    <div id="modalReserva" class="modal" style="display: none;">
+        <div class="modal-contenido">
+            <span class="cerrar-modal">&times;</span>
+            <h2 id="tituloModal">Reserva</h2>
+            <p id="mensajeModal">Mensaje de reserva</p>
+        </div>
+    </div>
+
+<!-- Modal de Selección de Platos con Categorías -->
+<div id="modalPlatos" class="modal" style="display: none;">
+    <div class="modal-contenido-grande">
+        <span class="cerrar-modal">&times;</span>
+        <h2>Selecciona tus platos</h2>
+
+        <!-- Navegación de Categorías -->
+        <nav class="categorias-nav">
+            <button class="categoria-btn" data-categoria="entradas">Entradas</button>
+            <button class="categoria-btn" data-categoria="platos-principales">Platos Principales</button>
+            <button class="categoria-btn" data-categoria="postres">Postres</button>
+            <button id="mostrarCarrito">Ver Carrito</button>
+        </nav>
+
+        <!-- Contenedor para mostrar los platos y el carrito -->
+        <div class="contenedor-principal">
+            <!-- Contenedor de Platos -->
+            <div id="listaPlatos" class="contenedor-platos">
+                <!-- Ejemplo de plato -->
+                <div class="plato-item" data-categoria="entradas" data-precio="7.00">
+                    <img src="images/primera1.jpg" alt="Plato 1" class="imagen-plato">
+                     <p class="title">Bruschetta</p>
+                    <div class="descripcion-plato">
+                        <h3>Entrada 1</h3>
+                        <p>Descripción de la entrada 1. Precio: $7.00</p>
+                        <label>Cantidad:
+                            <input type="number" value="0" min="0" class="cantidad-input">
+                        </label>
+                        <button class="agregar-carrito">Agregar al carrito</button>
+                    </div>
+                </div>
+                <div class="plato-item" data-categoria="entradas" data-precio="10.00">
+                    <img src="images/segunda.jpg" alt="Plato 1" class="imagen-plato">
+                    <p class="title">Rollo Primavera</p>
+                    <div class="descripcion-plato">
+                        <h3>Entrada 2</h3>
+                        <p>Descripción de la entrada 1. Precio: $10.00</p>
+                        <label>Cantidad:
+                            <input type="number" value="0" min="0" class="cantidad-input">
+                        </label>
+                        <button class="agregar-carrito">Agregar al carrito</button>
+                    </div>
+                </div>
+                <div class="plato-item" data-categoria="entradas" data-precio="10.00">
+                    <img src="images/tercera.jpg" alt="Plato 1" class="imagen-plato">
+                    <p class="title">Ceviche</p>
+                    <div class="descripcion-plato">
+                        <h3>Entrada 3</h3>
+                        <p>Descripción de la entrada 1. Precio: $13.00</p>
+                        <label>Cantidad:
+                            <input type="number" value="0" min="0" class="cantidad-input">
+                        </label>
+                        <button class="agregar-carrito">Agregar al carrito</button>
+                    </div>
+                </div>
+                <div class="plato-item" data-categoria="entradas" data-precio="10.00">
+                    <img src="images/cuarta.jpg" alt="Plato 1" class="imagen-plato">
+                    <p class="title">Hummus con Pan Pita</p>
+                    <div class="descripcion-plato">
+                        <h3>Entrada 4</h3>
+                        <p>Descripción de la entrada 1. Precio: $8.00</p>
+                        <label>Cantidad:
+                            <input type="number" value="0" min="0" class="cantidad-input">
+                        </label>
+                        <button class="agregar-carrito">Agregar al carrito</button>
+                    </div>
+                </div>
+                
+                <div class="plato-item" data-categoria="entradas" data-precio="10.00">
+                    <img src="images/quinta.jpg" alt="Plato 1" class="imagen-plato">
+                    <p class="title">Caprese</p>
+                    <div class="descripcion-plato">
+                        <h3>Entrada 2</h3>
+                        <p>Descripción de la entrada 1. Precio: $6.00</p>
+                        <label>Cantidad:
+                            <input type="number" value="0" min="0" class="cantidad-input">
+                        </label>
+                        <button class="agregar-carrito">Agregar al carrito</button>
+                    </div>
+                </div>
+                <div class="plato-item" data-categoria="entradas" data-precio="10.00">
+                    <img src="images/sexta.jpg" alt="Plato 1" class="imagen-plato">
+                    <p class="title">Tostones con Guacamole</p>
+                    <div class="descripcion-plato">
+                        <h3>Entrada 2</h3>
+                        <p>Descripción de la entrada 1. Precio: $7.00</p>
+                        <label>Cantidad:
+                            <input type="number" value="0" min="0" class="cantidad-input">
+                        </label>
+                        <button class="agregar-carrito">Agregar al carrito</button>
+                    </div>
+                </div>
+            </div>
+
+
+            
+
+
+
+            <aside id="carritoPlatos" class="carrito" style="display: none;"> <!-- Oculto por defecto -->
+                <h2>Carrito</h2>
+                <div id="carritoContenido">
+                    <p>No hay platos en el carrito.</p>
+                </div>
+            </aside>
+        </div>
+
+
+        <button id="confirmarPlatos">Confirmar Selección</button>
+        <!-- Botón para mostrar el carrito -->
+        
+    </div>
+</div>
+
+    <!-- Encabezado -->
+    <header>
+        <img src="images/logo.png" class="imagen-logo" alt="Logo del Restaurante">
+        <ul class="menu-horizontal">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="menú.html">Menú</a></li>
+            <li><a href="reservas.html">Reservas</a></li>
+            <li><a href="pedidos.html">Pedidos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+        
+        <div class="imagen-contenedor">
+            <!-- Imagen de perfil del usuario o predeterminada -->
+            <img id="foto-perfil" src="images/Acceder.png" class="Acceder"> <!-- Imagen predeterminada -->
+            <a id="acceder-enlace" href="login.html" class="texto-abajo">Acceder</a> <!-- Enlace de acceso -->
+            <!-- Opciones de Cerrar sesión (ocultas inicialmente) -->
+            <div id="cerrar-sesion" style="display:none; ">
+                <a href="#" id="cerrar-enlace">Cerrar sesión</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección de Reservas -->
+    <main>
+        <div class="content-wrapper" id="reservas">
+            <section class="reservas">
+                <h2>Reservas</h2>
+                <form id="formReservas" action="reservar.html" method="post">
+                    <div class="calendario">
+                        <div class="seleccion">
+                            <label for="fecha">Selecciona una fecha:</label>
+                            <input type="text" id="fecha" name="fecha" required>
+                        </div>
+                        <div class="personas">
+                            <label for="personas">Selecciona el número de personas:</label>
+                            <select id="personas" name="personas" required>
+                                <option value="" disabled selected>Seleccione</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+                        </div>
+                        <div class="hora">
+                            <label for="hora">Hora:</label>
+                            <select id="hora" name="hora" required>
+                                <option value="" disabled selected>Seleccione</option>
+                                <option value="12:00">12:00</option>
+                                <option value="12:30">12:30</option>
+                                <option value="13:00">13:00</option>
+                                <option value="13:30">13:30</option>
+                                <option value="14:00">14:00</option>
+                                <option value="14:30">14:30</option>
+                                <option value="15:00">15:00</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="opciones">
+                        <p>Opciones adicionales:</p>
+                        <div class="opciones-lista">
+                            <label><input type="checkbox" name="opciones[]" value="Globos"> Globos</label>
+                            <label><input type="checkbox" name="opciones[]" value="Flores"> Flores</label>
+                            <label><input type="checkbox" name="opciones[]" value="Velas"> Velas</label>
+                            <label><input type="checkbox" name="opciones[]" value="Postre especial"> Postre especial</label>
+                            
+                        </div>
+                    </div>
+
+
+                    <button type="submit" id="reservar">Reservar</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <!-- Pie de página -->
+   <footer>
+    <!-- Logotipo en la parte superior -->
+    <div class="footer-logo">
+        <img src="images/logo.png" class="imagen-footer" alt="Logotipo del restaurante" title="Restaurante Miramar">
+    </div>
+
+    <div class="footer-content">
+        <!-- Descripción -->
+        <div class="footer-description">
+            <p>
+                En un entorno único, Gastrofood ofrece una cocina moderna con raíces tradicionales, utilizando ingredientes de primera calidad y un servicio refinado. 
+                Disfruta de platos creativos y una experiencia gastronómica excepcional en cada visita.
+            </p>
+        </div>
+
+        <!-- Contacto -->
+        <div class="footer-contact">
+            <h3>Contacto</h3>
+            <p>Email: <a href="mailto:restaurant@GastroFood.com">restaurant@GastroFood.com</a></p>
+            <div class="social-icons">
+                <a href="#">📷 Instagram</a>
+                <a href="mailto:restaurant@GastroFood.com">📧 Correo electrónico</a>
+            </div>
+        </div>
+
+        <div class="footer-legal">
+            <p>Aviso legal</p>
+            <p>Política de privacidad</p>
+            <p>Política de cookies</p>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="js/reservas.js"></script>
+</body>
+</html>

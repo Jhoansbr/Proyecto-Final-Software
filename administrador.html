@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de Administrador</title>
+  <link rel="stylesheet" href="css/administrador.css">
+  <style>
+    .table-container {
+      display: none; /* Ocultar por defecto */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Perfil del administrador -->
+    <div class="admin-profile">
+      <img src="images/Acceder.png" alt="Foto de perfil" class="avatar">
+      <h2>Administrador</h2>
+      <div class="buttons">
+        <button class="btn green" onclick="showTable('menuTable')">Gestionar Menú</button>
+        <button class="btn green" onclick="showTable('pedidosTable')">Gestionar Pedidos</button>
+        <button class="btn green" onclick="showTable('inventarioTable')">Gestionar Inventario</button>
+        <button class="btn green" onclick="showTable('ventasTable')">Reporte de Ventas</button>
+        <button class="btn green" onclick="cerrarSesion()">Cerrar Sesión</button>
+      </div>
+    </div>
+
+    <!-- Tablas -->
+    <div class="table-container" id="menuTable">
+      <h3>Gestión de Menú</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="menuTableBody">
+          <!-- Platillos se agregan dinámicamente -->
+        </tbody>
+      </table>
+      <button class="btn green" onclick="showModal()">Agregar Platillo</button>
+    </div>
+    <div class="table-container" id="pedidosTable">
+      <h3>Gestión de Pedidos</h3>
+      <table>
+          <thead>
+              <tr>
+                  <th>Id</th>
+                  <th>Cliente</th>
+                  <th>Dirección</th>
+                  <th>Items</th>
+                  <th>Fecha</th>
+                  <th>Estado</th>
+                  <th>Total</th>
+                  <th>Acción</th>
+              </tr>
+          </thead>
+          <tbody id="pedidosTableBody">
+              <!-- Los pedidos se agregarán dinámicamente aquí -->
+          </tbody>
+      </table>
+  </div>
+  <div class="table-container" id="inventarioTable">
+    <h3>Inventario</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Cantidad</th>
+          <th>Unidad</th>
+          <th>Fecha de caducidad</th>
+          <th>Estado</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="inventoryBody">
+        <!-- Las filas de ingredientes se agregarán aquí -->
+      </tbody>
+    </table>    
+    <button class="btn green0" onclick="showAddIngredientModal()">Agregar</button>
+</div>
+
+<!-- Modal para agregar ingrediente -->
+<div id="addIngredientModal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <form id="addIngredientForm">
+        <input type="text" id="ingredientName" placeholder="Nombre del ingrediente" required>
+        <input type="number" id="quantity" placeholder="Cantidad" required>
+        <select id="unit" required>
+          <option value="kg">Kilogramos</option>
+          <option value="g">Gramos</option>
+          <option value="l">Litros</option>
+          <option value="ml">Mililitros</option>
+        </select>
+        <input type="date" id="expiryDate" required>
+        <select id="stockStatus" required>
+          <option value="Disponible">Disponible</option>
+          <option value="Agotado">Agotado</option>
+        </select>
+        <button type="submit">Agregar Ingrediente</button>
+      </form>
+</div>
+
+</div>
+  <div class="overlay" id="deleteConfirmOverlay" style="display: none;"></div>
+    <div class="table-container" id="ventasTable">
+      <h3>Reporte de Ventas</h3>
+      <div>
+        <label for="start-date">Desde:</label>
+        <input type="date" id="start-date">
+        <label for="end-date">Hasta:</label>
+        <input type="date" id="end-date">
+        <button class="btn green" onclick="generateReport()">Generar Reporte</button>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Cantidad</th>
+          </tr>
+        </thead>
+        <tbody id="ventasTableBody">
+          <!-- Ventas se agregan dinámicamente -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Modales -->
+    <!-- Modal para agregar o editar platillo -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal()"></div>
+<div class="modal" id="addDishModal">
+    <h2 id="modalTitle">Agregar Nuevo Platillo</h2>
+    <form id="addDishForm">
+        <label for="dishName">Nombre:</label>
+        <input type="text" id="dishName" required>
+        <label for="dishPrice">Precio:</label>
+        <input type="number" id="dishPrice" required>
+        <label for="dishDescription">Descripción:</label>
+        <textarea id="dishDescription" required></textarea>
+        <label for="dishIngredients">Ingredientes:</label>
+        <textarea id="dishIngredients" required></textarea>
+        <button type="submit" class="btn green">Agregar</button>
+        <button type="button" class="btn red" onclick="closeModal()">Cancelar</button>
+    </form>
+</div>
+
+  <script src="js/administrador.js"></script>
+</body>
+</html>

@@ -1,0 +1,525 @@
+/* Estilos para el scrollbar en Chrome y otros navegadores basados en WebKit */
+::-webkit-scrollbar {
+    width: 12px; /* Ancho del scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color del track */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888; /* Color de la parte que se puede mover */
+    border-radius: 6px; /* Bordes redondeados para el scrollbar */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color del thumb al pasar el ratón */
+}
+/* Asegura que el html y body ocupen toda la altura de la ventana */
+html, body {
+    height: 100%; /* La altura total de la ventana */
+    margin: 0; /* Elimina márgenes por defecto */
+}
+
+/* Contenedor principal que ocupa todo el espacio disponible */
+body {
+    display: flex;
+    flex-direction: column; /* Alinea los elementos de manera vertical */
+    justify-content: flex-start; /* Alinea el contenido hacia la parte superior */
+    background-color: #E8F8F5;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden; /* Evita que se desborde */
+    overflow-y: auto; 
+}
+
+/* Encabezado */
+header {
+    background-color: #1C2833; /* Azul oscuro para un toque elegante */
+    padding: 15px;
+    text-align: center;
+    font-size: 18px;
+    color: #FAFAFA; /* Blanco para el texto */
+}
+
+/* Sección del formulario de login */
+.login-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    height: 70vh; /* Asegura que el formulario esté centrado en la pantalla */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Estilo para el formulario de login */
+.login-form {
+    background-color: #FCF3CF; /* Fondo blanco */
+    padding: 20px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Para asegurar que no se desborde */
+    max-width: 380px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Título del formulario */
+.login-form h2 {
+    font-size: 22px;
+    color: #1C2833; /* Azul oscuro */
+    margin-bottom: 20px;
+}
+
+/* Grupo de campos de entrada */
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    color: #1C2833; /* Azul oscuro */
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+/* Contenedor de cada campo de entrada */
+.input-container {
+    position: relative;
+    width: 100%; /* Asegura que el contenedor de entrada ocupe todo el ancho disponible */
+}
+
+/* Ajustes para el campo de entrada */
+.input-container input {
+    width: 100%;
+    padding: 8px 10px;
+    padding-right: 35px; /* Da espacio para el icono sin que el texto se recorte */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
+}
+
+/* Estilo del icono dentro del campo */
+.input-container .icon {
+    position: absolute;
+    right: 10px;
+    top: 35%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #555;
+    pointer-events: none; /* Evita que el icono interfiera con la interacción del campo */
+}
+
+/* Enlace de recuperación de contraseña */
+.extras {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #1C2833; /* Azul oscuro */
+}
+
+/* Enlace para crear una cuenta */
+.signup-link {
+    margin-bottom: 20px;
+}
+
+.signup-link a {
+    color: #2874A6; /* Azul más claro para enlaces */
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo del botón de acceso */
+button {
+    width: 100%;
+    padding: 10px;
+    /*border: 2px solid #1C2833; /* Azul oscuro */
+    background-color: #D2691E;
+    color: #FAFAFA; /* Blanco */
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    /*transition: background-color 0.3s ease, color 0.3s ease;*/
+}
+
+button:hover {
+    background-color: #ffa15e; /* Azul más claro */
+    color: #FAFAFA; /* Blanco */
+}
+
+/* Imagen del logo */
+.imagen-logo {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+}
+
+
+/* Media query para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    /* Modificar el header */
+    header {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    /* Ajustar el formulario de login */
+    .login-form {
+        width: 90%; /* Ocupa más espacio en pantallas más pequeñas */
+        max-width: 350px; /* Ajusta el máximo de ancho */
+        padding: 15px; /* Menos padding */
+    }
+
+    /* Ajustar el tamaño del título */
+    .login-form h2 {
+        font-size: 18px; /* Reducir tamaño del texto */
+    }
+
+    /* Ajustar los campos de entrada */
+    .input-container input {
+        font-size: 14px; /* Reduce el tamaño del texto en los inputs */
+        padding: 10px; /* Aumenta el padding para mejorar la interacción táctil */
+    }
+
+    /* Ajuste de los enlaces */
+    .extras, .signup-link {
+        font-size: 12px;
+    }
+
+    /* Botón de acceso */
+    button {
+        font-size: 14px; /* Reduce el tamaño del texto */
+        padding: 12px; /* Aumenta el padding para facilitar la interacción */
+    }
+}
+
+/* Media query para pantallas muy pequeñas (móviles en apaisado o dispositivos más pequeños) */
+@media (max-width: 480px) {
+    /* Ajustar el logo */
+    .imagen-logo {
+        max-width: 80%; /* Ajusta el tamaño del logo */
+        margin: 20px auto; /* Añade más espacio arriba y abajo */
+    }
+
+    /* Ajustes generales para el login */
+    .login-form {
+        width: 95%; /* Aumenta el tamaño del formulario */
+    }
+
+    button {
+        padding: 15px; /* Aumenta el tamaño del botón */
+        font-size: 14px; /* Ajuste del tamaño de fuente */
+    }
+}
+
+/* Media query para pantallas grandes (escritorios) */
+@media (min-width: 1024px) {
+    .login-form {
+        max-width: 400px; /* Asegura que el formulario no se haga demasiado grande */
+    }
+}
+
+/* Estilos generales del pie de página */
+footer {
+    background-color: #f8f8f8;
+    padding: 0px 0px;
+    color: #333;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    
+}
+
+/* Logotipo centrado en la parte superior */
+.footer-logo {
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.footer-logo img {
+    max-width: 450px;
+    height: auto;
+}
+
+/* Contenido del pie de página (debajo del logotipo) */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+    gap: 20px;
+}
+
+/* Descripción */
+.footer-description {
+    font-family: 'Georgia', serif;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #333;
+    margin: 0px 0;
+    text-align: justify;
+    max-width: 340px;
+}
+
+/* Contacto */
+.footer-contact {
+    flex: 1;
+    font-size: 14px;
+    text-align: left;
+    margin-left: 120px;
+    margin-right: 120px;
+    margin-top: 10px;
+}
+
+.footer-contact h3 {
+    font-size: 16px;
+    color: #00579c;
+    margin-bottom: 10px;
+}
+
+.footer-contact a {
+    color: #00579c;
+    text-decoration: none;
+}
+
+.footer-contact a:hover {
+    text-decoration: underline;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+/* Enlaces legales */
+.footer-legal {
+    flex: 1;
+    text-align: left;
+}
+
+.footer-legal h3 {
+    font-size: 16px;
+    color: #00579c;
+    margin-bottom: 10px;
+}
+
+.footer-legal a {
+    color: #00579c;
+    text-decoration: none;
+}
+
+.footer-legal a:hover {
+    text-decoration: underline;
+}
+
+/* Pie de página inferior */
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+    color: #666;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
+
+/* Media Queries para dispositivos móviles */
+@media (max-width: 768px) {
+    .menu-horizontal {
+        flex-direction: column; /* Menú vertical en pantallas más pequeñas */
+        text-align: center;
+    }
+
+    .menu-horizontal a {
+        font-size: 20px;
+        margin: 10px 0;
+    }
+
+    .imagen-logo {
+        max-width: 100%; /* Asegura que la imagen del logo ocupe todo el ancho en pantallas pequeñas */
+        margin-top: 20px;
+    }
+
+    .carrusel-mosaico {
+        height: 250px; /* Ajusta la altura del carrusel para pantallas pequeñas */
+    }
+
+    .imagen-ejemplo {
+        width: 120px; /* Reducción del tamaño de las imágenes del carrusel */
+    }
+
+    .footer-content {
+        flex-direction: column; /* Pie de página en columna */
+        align-items: center;
+    }
+
+    .footer-contact,
+    .footer-legal {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 20px;
+    }
+
+    .footer-description {
+        text-align: center;
+        max-width: 100%;
+    }
+}
+
+/* Media Queries para dispositivos pequeños */
+@media (max-width: 480px) {
+    .menu-horizontal a {
+        font-size: 18px;
+    }
+
+    .oval {
+        font-size: 16px;
+        top: 10px;
+        right: 10px;
+    }
+
+    .footer-logo img {
+        max-width: 300px; /* Reducción del tamaño del logo en pantallas más pequeñas */
+    }
+
+    .footer-description {
+        font-size: 14px;
+    }
+
+    .footer-contact h3,
+    .footer-legal h3 {
+        font-size: 14px;
+    }
+}
+
+/* Contenedor principal que centra todo el contenido */
+.caja-centro {
+    display: flex;
+    flex-direction: column; /* Orden en columna */
+    margin-top: 240px;
+    align-items: center; /* Centra horizontalmente */
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    margin: 0; /* Sin márgenes externos */
+    text-align: center; /* Alinea el texto al centro */
+    background-color: #EAF8F8; /* Fondo claro */
+}
+
+/* Estilo del título */
+.caja-centro h1 {
+    font-size: 36px; /* Tamaño del título */
+    color: #2C3E50; /* Color del título */
+    margin-bottom: 35px; /* Espaciado debajo del título */
+    font-weight: bold; /* Título en negrita */
+}
+
+/* Estilo del texto descriptivo */
+.caja-centro p {
+    font-size: 20px; /* Tamaño del texto descriptivo */
+    line-height: 1.6; /* Espaciado entre líneas */
+    color: #333333; /* Color del texto */
+    max-width: 600px; /* Ancho máximo del texto */
+    margin: 0; /* Sin márgenes */
+}
+
+.texto-abajo:hover {
+    color: #ffa15e; /* Color más oscuro al pasar el cursor */
+    text-decoration: underline; /* Subrayado al pasar el cursor */
+}
+.container {
+    display: flex;
+    gap: 20px; /* Espacio horizontal entre imágenes */
+    justify-content: center; /* Centra las imágenes horizontalmente */
+    align-items: flex-start; /* Alinea las imágenes desde arriba */
+    margin-bottom: 80px;
+}
+  
+  .image-item {
+    max-width: 600px; /* Ancho máximo más grande para cada imagen */
+    position: relative; /* Para permitir la manipulación de la posición */
+  }
+  
+  .image-item:nth-child(1) {
+    margin-top: -200px; /* Ajusta la primera imagen un poco hacia abajo */
+  }
+  
+  .image-item:nth-child(2) {
+    margin-top: 0; /* Segunda imagen en su posición normal */
+  }
+  
+  .image-item:nth-child(3) {
+    margin-top: 200px; /* Tercera imagen un poco más abajo */
+  }
+  
+  .image-item img {
+    width: 100%; /* Aumenta el ancho al 100% del contenedor */
+    height: auto; /* Mantén las proporciones */
+    object-fit: cover;
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra elegante */
+  }
+  
+  /* Estilo para el botón de regresar */
+.back-button-container {
+    position: absolute;
+    bottom: 20px; /* Distancia desde el borde inferior */
+    left: 20px; /* Distancia desde el borde izquierdo */
+    z-index: 1000; /* Asegura que el botón esté por encima de otros elementos */
+}
+
+.back-button {
+    background-color: #e57d33; /* Color de fondo del botón */
+    color: white; /* Color del texto */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #ffa15e; /* Color del botón al pasar el mouse */
+}
+
+/* Aseguramos que el pie de página esté en la parte inferior sin que se superponga */
+footer {
+    position: relative;
+    padding: 20px;
+    margin-top: 40px;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+#backbutton {
+    background-color: #e57d33;
+    display: flex;
+    margin-left: 40px;
+    height: 40px;
+    width: 100px;
+    color: #EAF8F8;
+   
+    position: absolute;    /* Fija el botón en la pantalla */
+    left: 2%;
+    top: 10%;          /* Centra el botón horizontalmente */
+   
+}
+
+#backbutton:hover {
+    background-color: #ffa15e;
+}
